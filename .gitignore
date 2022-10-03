@@ -2,12 +2,14 @@
 /.gradle/
 ### Example user template template
 ### Example user template
+application-oauth.properties
 
 # IntelliJ project files
 .idea
 *.iml
 out
 gen
+
 ### Gradle template
 .gradle
 **/build/
