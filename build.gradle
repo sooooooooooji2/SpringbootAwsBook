@@ -26,17 +26,19 @@ repositories {          //각종 의존성(라이브러리)들을 어떤 원격 
     jcenter()           //라이브러리 업로드 난이도때문에 많이 사용
 }
 
-dependencies {     // 프로젝트 개발에 필요한 의존성들을 선언하는 곳
+dependencies {
+    implementation 'org.testng:testng:7.1.0'
+// 프로젝트 개발에 필요한 의존성들을 선언하는 곳
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.projectlombok:lombok')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-mustache')
     compile('com.h2database:h2')
-//    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
-//    compile('org.springframework.session:spring-session-jdbc')
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')   //소셜 로그인 등 클라이언트 입장에서 소셜기능 구현시 필요한 의존성
+    compile('org.springframework.session:spring-session-jdbc')
 //
 //    compile("org.mariadb.jdbc:mariadb-java-client")
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
-//    testCompile("org.springframework.security:spring-security-test")
+    testCompile("org.springframework.security:spring-security-test")
 }

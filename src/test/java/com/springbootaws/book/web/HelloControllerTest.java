@@ -1,12 +1,14 @@
 package com.springbootaws.book.web;
 
-import org.apache.catalina.security.SecurityConfig;
+//import org.apache.catalina.security.SecurityConfig;           //5장 테스트때 이거때문에 에러났었음..확인 할 것
+import com.springbootaws.book.config.auth.SecurityConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -26,6 +28,7 @@ public class HelloControllerTest {
     @Autowired  //스프링이 관리하는 빈을 주입 받음
     private MockMvc mvc;    //웹 api 테스트 할 때 사용, 스프링 mvc 테스트의 시작점, http &get & post 등 api 테스트 할 수 o
 
+    @WithMockUser(roles="USER") // 5장때 추가함
     @Test
     public void hello가_리턴된다() throws Exception {
         String hello = "helloaws";
@@ -35,6 +38,7 @@ public class HelloControllerTest {
                 .andExpect(content().string(hello));    // .perform 결과 검증, 응답 내용이 hello 인지 검증
     }
 
+    @WithMockUser(roles="USER") //5장때 추가함
     @Test
     public void helloDto가_리턴된다() throws Exception {
         String name = "hello";

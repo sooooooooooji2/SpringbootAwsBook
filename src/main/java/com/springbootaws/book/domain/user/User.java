@@ -24,7 +24,10 @@ public class User extends BaseTimeEntity {
     @Column
     private String picture;
 
-    @Enumerated(EnumType.STRING)    //
+    //@Enumerated(EnumType.STRING)
+    //jpa 기본데이터베이스로 저장할 때 enum 값을 어떤 형태로 저장힐지 결정하는 것
+    //기본적으로 int 형태로 됨 (숫자로 해두면 나중에 무슨의미인지 알 수 없어서 string으로 선언함)
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
