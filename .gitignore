@@ -9,7 +9,7 @@ application-oauth.properties
 *.iml
 out
 gen
-
+*.pem
 ### Gradle template
 .gradle
 **/build/
