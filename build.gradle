@@ -17,7 +17,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management' // 스프링부트 의존성 관리하는 필수적인 플로그인
 
 group 'com.springboot.aws.book'
-version '1.0-SNAPSHOT'+new Date().format("yyyyMMddHHmmss")
+version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
